@@ -1,0 +1,258 @@
+body{
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back{
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: backdiv;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+}
+
+.bday{
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    width: 100%;
+    font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    color: #0e2804;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #aded23;
+}
+
+.heart {
+    position: absolute;
+    margin: auto;
+    top: 60%;
+    bottom: 0;
+    left: 15%;
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+}
+
+.kead {
+    position: absolute;
+    margin: auto;
+    top: -25%;
+    bottom: 0;
+    right: 10%;
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+}
+
+.kead:before {
+    background-color: red;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -80px;
+    left: 0;
+}
+
+.kead:after {
+    background-color: red;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 80px;
+}
+
+.heart:before {
+    background-color: red;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -80px;
+    left: 0;
+}
+
+.heart:after {
+    background-color: red;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 80px;
+}
+
+@keyframes beat{
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(0.6) rotate(-45deg);
+    }
+}
+
+@keyframes backdiv {
+    50% {
+        background: #87eb7efd;
+    }
+}
+
+.flower{
+    height: 200px;
+    width: 200px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: pulsate 2s infinite;
+}
+
+.text-above, .text-below{
+    position: absolute;
+    text-align: center;
+    color: #000000;
+    font-size: 25px;
+}
+
+.text-above{
+    top: -60px;
+    
+}
+
+.text-below{
+    bottom: -100px;
+    font-family: fantasy;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1.6);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.mid {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #000, #ff5e00, #000);
+    z-index: 4;
+    background-size: 5px 5px;
+    filter: drop-shadow(0 0 8px #682600);
+}
+
+.petal1, .petal2, .petal3{
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle,#ff5e00, #fbd702);
+    filter: drop-shadow(0 0 5px #e05200);
+}
+
+/* Rotacion De los petalos*/
+
+.petal1.p1, .petal2.p1, .petal3.p1{
+    transform: rotate(22.5deg);
+}
+
+.petal1.p2, .petal2.p2, .petal3.p2{
+    transform: rotate(67.5deg);
+}
+
+.petal1.p3, .petal2.p3, .petal3.p3{
+    transform: rotate(110.5deg);
+}
+
+.petal1.p4, .petal2.p4, .petal3.p4{
+    transform: rotate(157.5deg);
+}
+
+/*Estilo para el primer girasol adicional*/
+
+.flower:nth-child(2){
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    animation: rotate 15s infinite;
+}
+
+.flower:nth-child(3){
+    position: absolute;
+    top: 450px;
+    left: 1200px;
+    animation: rotate 15s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas */
+    .flower {
+        height: 100px;
+        width: 100px;
+    }
+
+    .text-above {
+        top: -30px;
+    }
+
+    .text-below {
+        bottom: -60px;
+    }
+
+    .flower:nth-child(2){
+        top: 50px;
+        left: 100px;
+    }
+    
+    .flower:nth-child(3){
+        position: absolute;
+        top: 250px;
+        left: 600px;
+    }
+
+    /* Otros estilos específicos para pantallas más pequeñas */
+}
